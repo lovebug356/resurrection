@@ -1,4 +1,4 @@
-#include "OneWireBus.h"
+#include "onewirebus.h"
 
 OneWireBus::OneWireBus (uint8_t pin) {
   ow = new OneWire (pin);

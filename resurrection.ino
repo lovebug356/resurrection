@@ -1,8 +1,8 @@
 #include <LiquidCrystal.h>
 #include <OneWire.h>
 
-#include "OneWireBus.h"
 #include "menu.h"
+#include "onewirebus.h"
 
 #define PIN_LIGHT_1    5
 #define PIN_LIGHT_2    6
@@ -17,11 +17,11 @@ Menu   menu        (&lcd, &bus);
 void setup(void) {
   // start serial port
 //  Serial.begin(9600);
-  
+
   pinMode (PIN_LIGHT_1, OUTPUT);
   pinMode (PIN_LIGHT_2, OUTPUT);
   pinMode (PIN_VENT, OUTPUT);
-  
+
   digitalWrite (PIN_LIGHT_1, HIGH);
   digitalWrite (PIN_LIGHT_2, HIGH);
   digitalWrite (PIN_VENT, HIGH);

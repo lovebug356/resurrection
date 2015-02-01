@@ -1,4 +1,4 @@
-#include "temp_sensor.h"
+#include "tempsensor.h"
 
 TempSensor::TempSensor (byte addr[8], OneWire *ow) {
   for (int i=0; i<8; i++)

@@ -2,6 +2,7 @@
 #define TEMP_SENSOR_H
 
 #include <Arduino.h>
+#include <OneWire.h>
 
 #define WRONG_TEMPERATURE    999.99
 

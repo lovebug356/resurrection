@@ -2,9 +2,9 @@
 #define __MENU_H__
 
 #include <LiquidCrystal.h>
-#include "OneWireBus.h"
 #include <avr/eeprom.h>
 
+#include "onewirebus.h"
 #include "output.h"
 #include "button.h"
 #include "view.h"
@@ -47,7 +47,7 @@ class Menu {
     OneWireBus *bus;
     int state;
     unsigned long time;
-    
+
     // Buttons
     Switch all_off;
     Button button_1;
@@ -55,19 +55,19 @@ class Menu {
     Button button_3;
     Button button_up;
     Button button_down;
-    
+
     void check_button_1();
     void check_button_2();
     void check_button_3();
     void check_button_up();
     void check_button_down();
-    
+
     // Output
     Output heating;
-    
+
     // View
     View *view;
-    
+
     // Temp controller
     int temp_controller_active;
     double set_temp;
@@ -75,9 +75,9 @@ class Menu {
 
   public:
     Menu (LiquidCrystal *lc, OneWireBus *bus);
-    
+
     double get_temp (int id);
-    
+
     void set_temp_set (double new_temp_set);
     void set_temp_controller_active (int new_active);
 

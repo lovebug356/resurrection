@@ -3,7 +3,8 @@
 
 #include <Arduino.h>
 #include <OneWire.h>
-#include "temp_sensor.h"
+
+#include "tempsensor.h"
 
 #define ONE_WIRE_BUS_MAX_DEVICES           5
 #define ONE_WIRE_DELAY_BEFORE_READ         1000
