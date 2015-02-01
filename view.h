@@ -9,7 +9,6 @@ enum ViewStatus {
 };
 
 class View {
-  private:
   public:
     View *next;
     ViewStatus status;
