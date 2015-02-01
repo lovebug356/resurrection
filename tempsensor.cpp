@@ -8,19 +8,19 @@ TempSensor::TempSensor (byte addr[8], OneWire *ow) {
 
   switch (addr[0]) {
     case 0x10:
-//      Serial.println("  Chip = DS18S20");  // or old DS1820
+      // Chip = DS18S20 or old DS1820
       type_s = 1;
       break;
     case 0x28:
-//      Serial.println("  Chip = DS18B20");
+      // Chip = DS18B20
       type_s = 0;
       break;
     case 0x22:
-//      Serial.println("  Chip = DS1822");
+      // Chip = DS1822
       type_s = 0;
       break;
     default:
-      Serial.println("Device is not a DS18x20 family device.");
+      // Device is not a DS18x20 family device.
       lastTemp = WRONG_TEMPERATURE;
   }
 };
