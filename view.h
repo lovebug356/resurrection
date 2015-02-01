@@ -15,13 +15,13 @@ class View {
     ViewStatus status;
 
     View ();
-    
+
     View* get_last_view ();
     View* get_parent (View *child);
-    
+
     virtual void redraw();
     virtual void update();
-    
+
     virtual void button_click(int id, ButtonPress button_press);
 };
 

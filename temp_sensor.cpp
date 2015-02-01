@@ -5,7 +5,7 @@ TempSensor::TempSensor (byte addr[8], OneWire *ow) {
     this->addr[i] = addr[i];
   this->ow = ow;
   this->lastTemp = WRONG_TEMPERATURE;
-  
+
   switch (addr[0]) {
     case 0x10:
 //      Serial.println("  Chip = DS18S20");  // or old DS1820
@@ -32,7 +32,7 @@ void TempSensor::print_addr () {
   }
 }
 
-void TempSensor::requestTemperature () {  
+void TempSensor::requestTemperature () {
   ow->reset();
   ow->select(addr);
   ow->write(0x44, 1);        // start conversion, with parasite power on at the end
@@ -42,15 +42,15 @@ void TempSensor::readTemperature () {
   byte i;
   byte present = 0;
   byte data[12];
- 
+
   present = ow->reset();
-  ow->select(addr);    
+  ow->select(addr);
   ow->write(0xBE);         // Read Scratchpad
 
   for ( i = 0; i < 9; i++) {           // we need 9 bytes
     data[i] = ow->read();
   }
-  
+
   int16_t raw = (data[1] << 8) | data[0];
   if (type_s) {
     raw = raw << 3; // 9 bit resolution default
@@ -66,6 +66,6 @@ void TempSensor::readTemperature () {
     else if (cfg == 0x40) raw = raw & ~1; // 11 bit res, 375 ms
     //// default is 12 bit resolution, 750 ms conversion time
   }
-  
+
   lastTemp = (float)raw / 16.0;
 }

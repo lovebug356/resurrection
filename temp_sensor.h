@@ -2,7 +2,6 @@
 #define TEMP_SENSOR_H
 
 #include <Arduino.h>
-#include <OneWire.h>
 
 #define WRONG_TEMPERATURE    999.99
 
@@ -17,7 +16,7 @@ class TempSensor {
     void print_addr ();
 
     float getCelsius () {return lastTemp;};
-    
+
     void requestTemperature ();
     void readTemperature ();
 };

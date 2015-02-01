@@ -1,5 +1,5 @@
-#ifndef __HEATING_H_
-#define __HEATING_H_
+#ifndef __OUTPUT_H_
+#define __OUTPUT_H_
 
 class Output {
   private:

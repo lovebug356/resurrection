@@ -4,11 +4,11 @@
 
 Button::Button (int pin) {
   this->pin = pin;
-  
+
   this->last_state = 1;
   this->state = 1;
   this->debounce = 0;
-  
+
   pinMode (pin, INPUT);
   digitalWrite (pin, HIGH);
 }
@@ -22,7 +22,7 @@ Button::tick () {
     if (millis () - debounce > BUTTON_DEBOUNCE_DELAY) {
       if (state != dr) {
         state = dr;
-        
+
         if (dr == LOW) {
           return BUTTON_PRESS_SINGLE;
         }
@@ -36,14 +36,14 @@ Button::tick () {
       }
     }
   }
-  
+
   last_state = dr;
   return BUTTON_PRESS_NONE;
 }
 
 Switch::Switch (int pin) {
   this->pin = pin;
-  
+
   pinMode (pin, INPUT);
   digitalWrite (pin, HIGH);
 }

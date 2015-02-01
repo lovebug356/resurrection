@@ -23,12 +23,12 @@ class Button {
     int last_state;
     int state;
     unsigned long debounce;
-    
+
     int pin;
-    
+
   public:
     Button (int pin);
-    
+
     ButtonPress tick();
 };
 

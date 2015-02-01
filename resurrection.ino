@@ -16,7 +16,7 @@ Menu   menu        (&lcd, &bus);
 
 void setup(void) {
   // start serial port
-  Serial.begin(9600);
+//  Serial.begin(9600);
   
   pinMode (PIN_LIGHT_1, OUTPUT);
   pinMode (PIN_LIGHT_2, OUTPUT);
